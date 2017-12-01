@@ -1,4 +1,7 @@
+sudo: required
 language: node_js
 node_js: "7"
+services:
+  - docker
 env: AUTH=true USER=test PASSWORD=secret
-before_script: "npm run start"
+before_script: "docker run -p 3000:3000-d --name mycontainer urlshortenerdocker"
